@@ -3,7 +3,10 @@ package com.hardware.security;
 import com.hardware.entities.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.security.Key;
@@ -14,9 +17,13 @@ import java.util.Map;
 @Service
 public class JwtService {
 
-    private final String SECRET = "mysecretkeymysecretkeymysecretkey123456";
+    @Value("${jwt.secret}")
+    private  String secret;
 
-    private final Key key = Keys.hmacShaKeyFor(SECRET.getBytes());
+    private Key getSignInKey() {
+        byte[] keyBytes = Decoders.BASE64.decode(secret);
+        return Keys.hmacShaKeyFor(keyBytes);
+    }
 
     public String generateToken(User user) {
         Map<String, Object> claims = new HashMap<>();
@@ -27,13 +34,13 @@ public class JwtService {
                  .subject(user.getEmail())
                  .issuedAt(new Date())
                  .expiration(new Date(System.currentTimeMillis() + 86400000))
-                 .signWith(key)
+                 .signWith(getSignInKey())
                  .compact();
     }
 
     private Claims extractClaims(String token) {
         return Jwts.parser()
-                .setSigningKey(key)
+                .setSigningKey(getSignInKey())
                 .build()
                 .parseSignedClaims(token)
                 .getPayload();
