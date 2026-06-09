@@ -1,5 +1,6 @@
 package com.hardware.services;
 
+import com.hardware.exceptions.ResourceNotFoundException;
 import com.hardware.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -16,7 +17,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         var user = repository.findByEmail(email)
-                .orElseThrow(() -> new UsernameNotFoundException("Email Not Found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Email Not Found"));
 
         return org.springframework.security.core.userdetails.User
                 .builder()

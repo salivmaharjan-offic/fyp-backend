@@ -1,9 +1,6 @@
 package com.hardware.controllers;
 
-import com.hardware.dtos.AuthResponse;
-import com.hardware.dtos.LoginRequest;
-import com.hardware.dtos.RegisterRequest;
-import com.hardware.dtos.UserDTO;
+import com.hardware.dtos.*;
 import com.hardware.entities.User;
 import com.hardware.mapper.UserMapper;
 import com.hardware.repositories.UserRepository;
@@ -23,13 +20,42 @@ public class AuthController {
     private final AuthService authService;
     private final UserRepository  userRepository;
 
+    @PostMapping("/verify")
+    public ResponseEntity<AuthResponse>
+    verify(
+            @RequestBody
+            VerifyDTO request
+    ) {
+
+        return ResponseEntity.ok(
+                authService.verify(request)
+        );
+    }
+
+    @PostMapping("/resend-otp")
+    public ResponseEntity<String>
+    resendOtp(
+            @RequestBody
+            ResendDTO request
+    ) {
+
+        return ResponseEntity.ok(
+                authService.resendOtp(request)
+        );
+    }
+
     @PostMapping("/register")
-    public ResponseEntity<AuthResponse> register(@Valid @RequestBody RegisterRequest request) {
-       return ResponseEntity.ok(authService.register(request));
+    public ResponseEntity<String> register(
+            @RequestBody RegisterRequest request
+    ) {
+
+        return ResponseEntity.ok(
+                authService.register(request)
+        );
     }
 
     @PostMapping("/login")
-    public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
+    public ResponseEntity<AuthResponse> login(@Valid @RequestBody LoginRequest request) {
         return ResponseEntity.ok(authService.login(request));
     }
 

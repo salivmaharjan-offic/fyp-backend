@@ -1,12 +1,10 @@
 package com.hardware.dtos;
 
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
 @Data
-public class LoginRequest {
+public class ResendDTO {
+    @Email
     private String email;
-
-    private String password;
 }
