@@ -1,4 +1,4 @@
-package com.hardware.services;
+package com.hardware.security.OAuth;
 
 import com.hardware.dtos.enums.AuthProvider;
 import com.hardware.dtos.enums.Role;

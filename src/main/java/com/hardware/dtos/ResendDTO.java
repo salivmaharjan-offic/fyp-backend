@@ -5,6 +5,5 @@ import lombok.Data;
 
 @Data
 public class ResendDTO {
-    @Email
     private String email;
 }

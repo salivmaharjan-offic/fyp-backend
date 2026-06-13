@@ -1,8 +1,8 @@
 package com.hardware.config;
 
-import com.hardware.security.JwtAuthFilter;
-import com.hardware.security.OAuth2SuccessHandler;
-import com.hardware.services.CustomOAuth2UserService;
+import com.hardware.security.Jwt.JwtAuthFilter;
+import com.hardware.security.OAuth.OAuth2SuccessHandler;
+import com.hardware.security.OAuth.CustomOAuth2UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

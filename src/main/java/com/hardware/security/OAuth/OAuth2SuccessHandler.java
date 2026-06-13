@@ -1,7 +1,8 @@
-package com.hardware.security;
+package com.hardware.security.OAuth;
 
 import com.hardware.entities.User;
 import com.hardware.repositories.UserRepository;
+import com.hardware.security.Jwt.JwtService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;

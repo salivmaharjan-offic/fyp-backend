@@ -21,6 +21,19 @@ public class UserServiceImpl implements UserService {
     // Create Users
     @Override
     public UserDTO createUser(UserDTO userDTO) {
+        // Email Validations
+        if(userDTO.getEmail() == null || userDTO.getEmail().isBlank()){
+            throw new IllegalArgumentException("Email is required");
+        }
+        if(userRepository.existsByEmail(userDTO.getEmail())){
+            throw new IllegalArgumentException("Email already exists");
+        }
+
+        // Password Validations
+        if(userDTO.getPassword() == null || userDTO.getPassword().isBlank()){
+            throw new IllegalArgumentException("Password is required");
+        }
+
         User user = UserMapper.toEntity(userDTO);
         User savedUser = userRepository.save(user);
         return UserMapper.toDTO(savedUser);
