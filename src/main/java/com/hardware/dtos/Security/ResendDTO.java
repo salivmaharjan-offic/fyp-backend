@@ -1,6 +1,5 @@
-package com.hardware.dtos;
+package com.hardware.dtos.Security;
 
-import jakarta.validation.constraints.Email;
 import lombok.Data;
 
 @Data

@@ -1,10 +1,8 @@
 package com.hardware.entities;
 
-import com.hardware.dtos.enums.AuthProvider;
-import com.hardware.dtos.enums.Role;
+import com.hardware.entities.enums.AuthProvider;
+import com.hardware.entities.enums.Role;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

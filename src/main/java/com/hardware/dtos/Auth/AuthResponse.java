@@ -1,5 +1,6 @@
-package com.hardware.dtos;
+package com.hardware.dtos.Auth;
 
+import com.hardware.dtos.UserDTO;
 import lombok.*;
 
 @Getter

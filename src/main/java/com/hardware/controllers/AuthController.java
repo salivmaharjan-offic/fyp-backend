@@ -1,6 +1,11 @@
 package com.hardware.controllers;
 
 import com.hardware.dtos.*;
+import com.hardware.dtos.Auth.AuthResponse;
+import com.hardware.dtos.Auth.LoginRequest;
+import com.hardware.dtos.Auth.RegisterRequest;
+import com.hardware.dtos.Security.ResendDTO;
+import com.hardware.dtos.Security.VerifyDTO;
 import com.hardware.entities.User;
 import com.hardware.mapper.UserMapper;
 import com.hardware.repositories.UserRepository;

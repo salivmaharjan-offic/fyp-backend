@@ -1,7 +1,7 @@
 package com.hardware.dtos;
 
-import com.hardware.dtos.enums.AuthProvider;
-import com.hardware.dtos.enums.Role;
+import com.hardware.entities.enums.AuthProvider;
+import com.hardware.entities.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

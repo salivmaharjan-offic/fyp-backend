@@ -1,7 +1,11 @@
 package com.hardware.services;
 
-import com.hardware.dtos.*;
-import com.hardware.dtos.enums.AuthProvider;
+import com.hardware.dtos.Auth.AuthResponse;
+import com.hardware.dtos.Auth.LoginRequest;
+import com.hardware.dtos.Auth.RegisterRequest;
+import com.hardware.dtos.Security.ResendDTO;
+import com.hardware.dtos.Security.VerifyDTO;
+import com.hardware.entities.enums.AuthProvider;
 import com.hardware.entities.PendingRegistration;
 import com.hardware.entities.User;
 import com.hardware.exceptions.BadRequestException;
@@ -194,7 +198,7 @@ public class AuthService {
         return "OTP resent successfully.";
     }
 
-    public AuthResponse login(LoginRequest  request) {
+    public AuthResponse login(LoginRequest request) {
 
         authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(

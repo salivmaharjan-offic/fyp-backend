@@ -1,4 +1,4 @@
-package com.hardware.dtos.records;
+package com.hardware.entities.records;
 
 import org.springframework.http.HttpStatus;
 

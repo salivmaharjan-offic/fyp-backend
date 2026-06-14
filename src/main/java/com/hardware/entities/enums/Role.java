@@ -1,4 +1,4 @@
-package com.hardware.dtos.enums;
+package com.hardware.entities.enums;
 
 public enum Role {
     CUSTOMER,

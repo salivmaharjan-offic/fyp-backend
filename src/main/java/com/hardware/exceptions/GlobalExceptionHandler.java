@@ -1,6 +1,6 @@
 package com.hardware.exceptions;
 
-import com.hardware.dtos.records.ErrorResponse;
+import com.hardware.entities.records.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

@@ -1,7 +1,7 @@
 package com.hardware.security.OAuth;
 
-import com.hardware.dtos.enums.AuthProvider;
-import com.hardware.dtos.enums.Role;
+import com.hardware.entities.enums.AuthProvider;
+import com.hardware.entities.enums.Role;
 import com.hardware.entities.User;
 import com.hardware.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;

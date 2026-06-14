@@ -1,9 +1,7 @@
-package com.hardware.dtos;
+package com.hardware.dtos.Auth;
 
-import com.hardware.dtos.enums.AuthProvider;
-import com.hardware.dtos.enums.Role;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
+import com.hardware.entities.enums.AuthProvider;
+import com.hardware.entities.enums.Role;
 import lombok.Data;
 
 @Data
